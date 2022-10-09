@@ -16,3 +16,4 @@ requests-unixsocket==0.2.0
 SQLAlchemy==1.4.35
 sqlparse==0.4.2
 urllib3==1.25.8
+favicon == 0.7.0
