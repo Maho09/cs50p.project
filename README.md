@@ -23,7 +23,8 @@ my project is a web app using flask, sql and bootstrap
 13. contact route shows contact info
 
 ##### templates: all using bootstrap and extending layout.html
-1. layout.html:  i created a nav-bar which is collapsible. in the login page it shows only contact us link. after u log in it shows all the possible routs. 
+
+1. layout.html: i created a nav-bar which is collapsible. in the login page it shows only contact us link. after u log in it shows all the possible routs.
 
 2. login.html: it extends layout.html plus a login box with options to login or sign-up.
 
@@ -31,28 +32,30 @@ my project is a web app using flask, sql and bootstrap
 
 4. appointments.html: after logging in the first page shows appoimtments on current date and u can also select a certain date
 
-6. certainDate.html: after selecting a certain date in the appoimtments page it quiries the database for the date and shows appointments on that date 
+5. certainDate.html: after selecting a certain date in the appoimtments page it quiries the database for the date and shows appointments on that date
 
-7. new.html: when u click on add new appointment from the nav-bar it shows a form to add a new appointment and register it in the database.
+6. new.html: when u click on add new appointment from the nav-bar it shows a form to add a new appointment and register it in the database.
 
-8. contact.html: it only shows the email of the developer for contact.
+7. contact.html: it only shows the email of the developer for contact.
 
-9. finance.html: this page utilizes multiple routes to perform all its functions to show procedures and income on certain dates.
+8. finance.html: this page utilizes multiple routes to perform all its functions to show procedures and income on certain dates.
 
-10. apology.html: it gives erroe messages when input is invalis or incorrect using the error function in help.py.
+9. apology.html: it gives erroe messages when input is invalis or incorrect using the error function in help.py.
 
-11. staff.html: it shows the staff registered to a certain clinic utilizing the username in the sign up form as a unique input.
+10. staff.html: it shows the staff registered to a certain clinic utilizing the username in the sign up form as a unique input.
 
-12. search.html: it shows the patients searched with all procedures performed on the patient.
+11. search.html: it shows the patients searched with all procedures performed on the patient.
 
-13. procedure.html: it shows all procedures in the database related to the current clinic logged in.
+12. procedure.html: it shows all procedures in the database related to the current clinic logged in.
 
 ##### database:
+
 clinic.db: this file contains:
-1. appointments table: showing name, day, hour, procedure, user(to defferentiate different clinics) and id 
+
+1. appointments table: showing name, day, hour, procedure, user(to defferentiate different clinics) and id
 
 2. procedures table: showing patient's name, doctor, procedure, comments, price, user(to defferentiate different clinics), and date
 
-3. staff table: showing name, Role, age, salary, user(to defferentiate different clinics) and id 
+3. staff table: showing name, Role, age, salary, user(to defferentiate different clinics) and id
 
 4. users table: showing username(unique), password(hashed), clinic name and owner
