@@ -1,0 +1,355 @@
+{% extends "base.html" %} {% block title %} Welcome {% endblock %} {%block
+main%}
+
+<div
+  style="
+    text-align: left;
+    padding-left: 50px;
+    float: left;
+    width: 100%;
+    align-content: flex-start;
+  "
+>
+  <form action="/start" enctype = "multipart/form-data" method="post">
+    <button type="button" class="collapsible">
+      <h3>Personal Information</h3>
+      <hr class="hr" />
+    </button>
+    <div class="content">
+      <div>
+        <label for="img"><strong>Personal photo</label>
+        <p>
+          {% with messages = get_flashed_messages() %}
+          {% if message %}
+          <ul>
+          {% for message in messages %}
+          <li>{{message}}</li>
+          {% endfor %}
+          </ul>
+          {% endif %}
+          {% endwith %}
+        </p>
+        <input style="width: 400px" class="form-control input" type="file" id="img" name="file" autocomplete="off">
+        <br>
+        <label for="name"><strong>Full name</label>
+        <input
+          required
+          type="text"
+          class="form-control input"
+          id="name"
+          name="Full name"
+          placeholder="Full name"
+          style="width: 300px"
+        />
+        <label for="name"><strong>Job title</label>
+        <input
+          required
+          type="text"
+          class="form-control input"
+          id="name"
+          name="job"
+          placeholder="job"
+          style="width: 300px"
+        />
+        <label for="birth"><strong>Date of birth</label>
+        <input
+        required
+          type="date"
+          class="form-control input"
+          id="birth"
+          birth="Full birth"
+          style="width: 300px"
+        />
+        <label for="Address"><strong>Address</label>
+        <input
+          required
+          type="text"
+          class="form-control input"
+          id="Address"
+          name="Address"
+          style="width: 500px; height: 80px"
+        />
+        <label for="Email"><strong>Email</label>
+        <input
+          required
+          type="text"
+          class="form-control input"
+          id="Email"
+          name="Email"
+          placeholder="example@something.com"
+          style="width: 300px"
+        />
+        <label for="Phone"><strong>Phone</label>
+        <input
+          required
+          type="number"
+          class="form-control input"
+          id="Phone"
+          name="Phone"
+          placeholder="phone number"
+          style="width: 300px; margin-bottom: 30px"
+        />
+      </div>
+    </div>
+    <br />
+    <button type="button" class="collapsible">
+      <h3>Education</h3>
+      <hr class="hr" />
+    </button>
+    <div class="content">
+      <div>
+        <label for="school"><strong>High school</label>
+        <input
+          type="text"
+          class="form-control input"
+          id="school"
+          name="school"
+          placeholder="school name"
+          style="width: 300px"
+        />
+        <input
+          type="text"
+          class="form-control input"
+          id="school"
+          name="grade"
+          placeholder="Grade"
+          style="width: 300px"
+        />
+        <label for="Higher education"><strong>Higher education</label>
+        <input
+          type="text"
+          class="form-control input"
+          id="Higher education"
+          name="Higher education"
+          style="width: 300px"
+          placeholder="Degree"
+        />
+        <input
+          type="text"
+          class="form-control input"
+          id="Higher education"
+          name="Higher education detail"
+          style="width: 500px; height: 100px"
+          placeholder="Details"
+        />
+        <input
+          type="text"
+          class="form-control input"
+          id="Higher education"
+          name="gpa"
+          style="width: 500px; height: 100px"
+          placeholder="GPA"
+        />
+      </div>
+    </div>
+    <br />
+    <button type="button" class="collapsible">
+      <h3>Experience</h3>
+      <hr class="hr" />
+    </button>
+    <div class="content">
+      <div id="exp_cont"><button onclick='addexp()' class="btn btn-dark btn-lg skill-btn" type="button">Add</button></div>
+    </div>
+    <br />
+    <button type="button" class="collapsible">
+      <h3>skills</h3>
+      <hr class="hr" />
+    </button>
+    <div class="content">
+      <div id='input-cont'>
+        <input
+          type="text"
+          class="form-control input"
+          id="Higher education"
+          name="skill"
+          style="width: 300px"
+        />
+        <input
+          type="text"
+          class="form-control input"
+          placeholder="Details"
+          id="Higher education"
+          name="skill_detail"
+          style="width: 300px"
+        />
+        <button onclick='addInput()' class="btn btn-dark btn-lg skill-btn" type="button" style="margin-bottom: 5px;">Add</button>
+      </div>
+    </div>
+    <br />
+    <button type="button" class="collapsible">
+      <h3>Objective</h3>
+      <hr class="hr" />
+    </button>
+    <div class="content">
+      <div>
+        <label for="objective"><strong> Objective</label>
+        <input
+          type="text"
+          class="form-control input"
+          id="objective"
+          name="objective"
+          style="width: 700px; height: 100px"
+        />
+      </div>
+    </div>
+    <br />
+    <button type="button" class="collapsible">
+      <h3>Social section</h3>
+      <hr class="hr" />
+    </button>
+    <div class="content">
+      <div> <label for="birth"><strong>Facebook</label>
+        <input
+          name="Facebook"
+          type="text"
+          class="form-control input"
+          id="face"
+          style="width: 300px"
+        /> <br>
+      <label for="birth"><strong>Linkedin</label>
+        <input
+          name="linkedin"
+          type="text"
+          class="form-control input"
+          id="birth"
+          birth="Full birth"
+          style="width: 300px"
+        /> <br>
+      <label for="birth"><strong>Twitter</label>
+        <input
+          name="twitter"
+          type="text"
+          class="form-control input"
+          id="birth"
+          birth="Full birth"
+          style="width: 300px"
+        /> <br></div>
+    </div>
+    <br>
+    <button type="button" class="collapsible">
+      <h3>Additional sections</h3>
+      <hr class="hr" />
+    </button>
+    <div class="content" id="section-cont">
+      <div><button onclick='addsection()' class="btn btn-dark btn-lg skill-btn" type="button">Add</button> <br></div>
+    </div>
+    <br>
+    <br><button type="submit" class="btn btn-dark btn-lg" >Create my CV</button>
+  </form>
+</div>
+<script>
+  
+  var coll = document.getElementsByClassName('collapsible');
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener('click', function () {
+      this.classList.toggle('active');
+      var content = this.nextElementSibling;
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
+      } else {
+        content.style.display = 'block';
+      }
+    })}
+
+    const container = document.getElementById('input-cont');
+    s = 0
+        // Call addInput() function on button click
+        function addInput(){
+            let input = document.createElement('input');
+            input.name = "skill" + s
+            input.classList.add("form-control")
+            input.style = "width : 300px"
+            container.appendChild(input);
+
+            let detail = document.createElement('input');
+            detail.name = "skill_detail" + s
+            detail.placeholder = "details"
+            detail.classList.add("form-control")
+            detail.style = "width : 300px"
+            container.appendChild(detail);
+
+            let br = document.createElement('br');
+            container.appendChild(br);
+            s += 1
+        }
+        const sections = document.getElementById('section-cont');
+        sec = 0
+        function addsection(){
+          let exptitle = document.createElement('h5')
+            exptitle.textContent = "section" + (sec + 1)
+            sections.appendChild(exptitle); 
+
+            let sec_head = document.createElement('input')
+            sec_head.name = "sec" + sec
+            sec_head.placeholder = "Title"
+            sec_head.classList.add("form-control")
+            sec_head.style = "width : 300px"
+            sections.appendChild(sec_head);
+
+            let input = document.createElement('input');
+            input.name = "sec_info" + sec
+            input.placeholder = "Details"
+            input.classList.add("form-control")
+            input.style = "width : 500px"
+            sections.appendChild(input);
+            sec += 1
+        }
+
+        const experience = document.getElementById('exp_cont');
+        exp = 0
+        function addexp(){
+            let exptitle = document.createElement('h5')
+            exptitle.textContent = "Experience" + (exp + 1)
+            experience.appendChild(exptitle);
+
+            let exp_head = document.createElement('input')
+            exp_head.name = "exp" + exp
+            exp_head.placeholder = "company"
+            exp_head.classList.add("form-control")
+            exp_head.style = "width : 300px; margin-bottom : 15px"
+            experience.appendChild(exp_head);
+
+            let exp_title = document.createElement('input')
+            exp_title.name = "exp_title" + exp
+            exp_title.placeholder = "Title"
+            exp_title.classList.add("form-control")
+            exp_title.style = "width : 300px; margin-bottom : 15px"
+            experience.appendChild(exp_title);
+
+            let info = document.createElement('input');
+            info.name = "exp_info" + exp
+            info.placeholder = "Details"
+            info.classList.add("form-control")
+            info.style = "width : 500px; height : 70px; margin-bottom: 8px" 
+            info.type = "text"
+            experience.appendChild(info);
+
+            
+            let start = document.createElement('h5');
+            start.textContent = "Start date"
+            experience.appendChild(start);
+            let input = document.createElement('input');
+            input.name = "exp_date" + exp
+            input.classList.add("form-control")
+            input.style = "width : 300px; margin-bottom : 15px"
+            input.type = "month"
+            experience.appendChild(input);
+            
+            End = document.createElement('h5');
+            End.textContent = "End date"
+            experience.appendChild(End);
+            let input1 = document.createElement('input');
+            input1.name = "exp_date1" + exp
+            input1.classList.add("form-control")
+            input1.style = "width : 300px; margin-bottom : 15px"
+            input1.type = "month"
+            experience.appendChild(input1);
+
+            exp += 1
+        }
+  
+  
+</script>
+{% endblock %}

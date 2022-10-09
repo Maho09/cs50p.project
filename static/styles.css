@@ -1,0 +1,41 @@
+.hr {
+  width: 600px;
+}
+
+.input {
+  margin-bottom: 15px;
+}
+
+body {
+  background-size: 100%;
+}
+label {
+  font-size: large;
+}
+.collapsible {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-align: left;
+  background: none;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  display: none;
+  overflow: hidden;
+}
+
+.skill_input {
+  width: 500px;
+}
+
+.btn-gen {
+  border-radius: 10%;
+  background-color: black;
+  text-align: center;
+  color: white;
+  width: 200px;
+  height: 90px;
+  font-size: x-large;
+}

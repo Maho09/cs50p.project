@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Your CV</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="static/resume.css"
+      media="all"
+    />
+  </head>
+  <body>
+    <div id="doc2" class="yui-t7">
+      <div id="inner">
+        <div id="hd">
+          <div class="yui-gc">
+            <div class="yui-u first">
+              {% if file %}
+              <img src="static/uploads/{{filename}}" style="border-radius:20%;width: 100px; height: 100px ;" alt="">
+              {% endif %}
+              <h1>{{name}}</h1>
+              <h2>{{job}}</h2>
+            </div>
+
+            <div class="yui-u">
+              <div class="contact-info">
+                <h3><p>{{email}}</p></h3>
+                <h3>{{Phone}}</h3>
+              </div>
+              <!--// .contact-info -->
+            </div>
+          </div>
+          <!--// .yui-gc -->
+        </div>
+        <!--// hd -->
+
+        <div id="bd">
+          <div id="yui-main">
+            <div class="yui-b">
+              {% if objective %}
+              <div class="yui-gf">
+						<div class="yui-u first">
+							<h2>Objective</h2>
+						</div>
+						<div class="yui-u">
+							<p class="enlarge">
+								{{objective}} 
+							</p>
+						</div>
+					</div><!--// .yui-gf -->
+              <!--// .yui-gf -->
+            {% endif %}
+            {% if Skills %}
+              <div class="yui-gf">
+                <div class="yui-u first">
+                  <h2>Skills</h2>
+                </div>
+                <div class="yui-u">
+                    <h2>{{skill_f}}</h2>
+                    <p class="enlarge">
+                      {{skill_detail}}
+                    </p>
+									</div></div>
+										{% for row in skills%}
+										<div class="yui-gf">
+                <div class="yui-u first">
+											 <h2>{{row[0]}}</h2>
+                    <p class="enlarge">
+                      {{row[1]}}
+                    </p>
+										{% endfor %}
+                  </div>
+                </div>
+              </div>
+              <!--// .yui-gf -->
+              {% endif %}
+              {% if exps %}
+              <div class="yui-gf">
+                <div class="yui-u first">
+                  <h2>Experience</h2>
+                </div>
+                <!--// .yui-u -->
+
+                <div class="yui-u">
+									{% for row in exps%}
+										<div class="job">
+                    <h2>{{row[0]}}                               
+											{% if row[3] %}
+                    		({{row[1]}}/{{row[3]}})
+											{% else %}
+												({{row[1]}}/Present)
+										{% endif %}</h2>
+                    <h3>{{row[4]}}</h3>
+                    <p class="enlarge">
+                      {{row[2]}}
+                    </p>
+                  </div>
+									{% endfor %}
+                </div>
+                <!--// .yui-u -->
+              </div>
+              <!--// .yui-gf -->
+              {% endif %}
+              {% if others %}
+							<div class="yui-gf">
+                <div class="yui-u first">
+                  <h2>Additional information</h2>
+                </div>
+                <div class="yui-u">
+                  <div class="talent">
+										{% for k,v in others.items() %}
+										<li style="list-style: disc;">
+											<strong>{{k}}</strong>
+											<p class="enlarge">
+												{{v}}
+											</p>
+										</li>
+										{% endfor %}
+                  </div>
+                </div>
+              </div>
+<br>
+{% endif %}
+              
+              <div class="yui-gf last">
+                <div class="yui-u first">
+                  <h2>Education</h2>
+                </div>
+                {% if school %}
+                <div class="yui-u">
+									<h3>School</h2>
+										<h4>{{school}}<strong>{{grade}}</strong></h4>
+                {% endif %}
+                {% if higher_edu %}
+                  <h2>{{higher_edu}}</h2>
+                  <h4>
+                    {{higher_edu_detail}};
+                    <strong>{{gpa}}</strong>
+                  </h4>
+                </div>
+              </div>
+                {% endif %}
+              {% if facebook or linkedin or twitter %}
+							<div class="yui-gf last">
+                <div class="yui-u first">
+                  <h2>Social</h2>
+                </div>
+                <div class="yui-u">
+                  {% if facebook %}
+									<h3>Facebook</h2>
+										<p>{{facebook}}</p>
+                  {% endif %}
+                  {% if linkedin %}
+                  <h2>Linkedin</h2>
+                  <p>
+                    {{linkedin}};
+                  </h3>
+                  {% endif %}
+                  {% if twitter %}
+                  <h2>Twitter</h2>
+                  <p>
+                    {{twitter}};
+                  </h3>
+                  {% endif %}
+                </div>
+              </div>
+              {% endif %}
+							
+              <!--// .yui-gf -->
+            </div>
+            <!--// .yui-b -->
+          </div>
+          <!--// yui-main -->
+        </div>
+        <!--// bd -->
+
+        <div id="ft">
+          <p>
+            {{name}};
+            {{email}}-{{Phone}}
+          </p>
+        </div>
+        <!--// footer -->
+      </div>
+      <!-- // inner -->
+    </div>
+    <!--// doc -->
+  </body>
+</html>
