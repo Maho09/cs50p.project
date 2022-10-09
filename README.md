@@ -50,12 +50,4 @@ my project is a web app using flask, sql and bootstrap
 
 ##### database:
 
-clinic.db: this file contains:
 
-1. appointments table: showing name, day, hour, procedure, user(to defferentiate different clinics) and id
-
-2. procedures table: showing patient's name, doctor, procedure, comments, price, user(to defferentiate different clinics), and date
-
-3. staff table: showing name, Role, age, salary, user(to defferentiate different clinics) and id
-
-4. users table: showing username(unique), password(hashed), clinic name and owner
