@@ -7,6 +7,9 @@ import favicon
 # Configure application
 app = Flask(__name__)
 
+if __name__ == 'main': 
+  app.run(debug=True)
+
 UPLOAD_FOLDER = "static/uploads/"
 app.config['SECRET_KEY'] = '#$%^&*'
 
