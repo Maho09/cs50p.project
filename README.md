@@ -1,6 +1,6 @@
 # Easy CV builder
 
-#### Video Demo: <URL https://youtu.be/XNyGb9QmXGY>
+#### Video Demo: <URL https:https://youtu.be/L4NPZd4pc9k>
 
 #### Description:
 
