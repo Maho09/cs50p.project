@@ -18,17 +18,6 @@ main%}
     <div class="content">
       <div>
         <label for="img"><strong>Personal photo</label>
-        <p>
-          {% with messages = get_flashed_messages() %}
-          {% if message %}
-          <ul>
-          {% for message in messages %}
-          <li>{{message}}</li>
-          {% endfor %}
-          </ul>
-          {% endif %}
-          {% endwith %}
-        </p>
         <input style="width: 400px" class="form-control input" type="file" id="img" name="file" autocomplete="off">
         <br>
         <label for="name"><strong>Full name</label>
@@ -260,7 +249,7 @@ main%}
             let input = document.createElement('input');
             input.name = "skill" + s
             input.classList.add("form-control")
-            input.style = "width : 300px"
+            input.style = "width : 300px; margin-bottom:10px"
             container.appendChild(input);
 
             let detail = document.createElement('input');

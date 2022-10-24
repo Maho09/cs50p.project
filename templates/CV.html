@@ -112,28 +112,27 @@
               </div>
               <!--// .yui-gf -->
               {% endif %}
+
               {% if others %}
 							<div class="yui-gf">
                 <div class="yui-u first">
                   <h2>Additional information</h2>
                 </div>
                 <div class="yui-u">
-                  <div class="talent">
+                  
 										{% for k,v in others.items() %}
-										<li style="list-style: disc;">
 											<strong>{{k}}</strong>
 											<p class="enlarge">
 												{{v}}
 											</p>
-										</li>
+                      <br>
 										{% endfor %}
-                  </div>
                 </div>
               </div>
 <br>
 {% endif %}
               
-              <div class="yui-gf last">
+              <div class="yui-gf">
                 <div class="yui-u first">
                   <h2>Education</h2>
                 </div>
@@ -151,6 +150,7 @@
                 </div>
               </div>
                 {% endif %}
+                
               {% if facebook or linkedin or twitter %}
 							<div class="yui-gf last">
                 <div class="yui-u first">

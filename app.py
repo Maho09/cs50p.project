@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request
+from fileinput import filename
+from flask import Flask, render_template, request, redirect
 from tempfile import mkdtemp
 import os
 from werkzeug.utils import secure_filename
-import favicon
 
 # Configure application
 app = Flask(__name__)
@@ -124,7 +124,7 @@ def start():
     # return True on success and False on errors
         return render_template("CV.html",
         name = name, Address=Address,
-        email = email, Phone = Phone, gpa=gpa, job=job, exps=exps, school = school, grade=grade, higher_edu = higher_edu, higher_edu_detail = higher_edu_detail, skill_f = skill_f, skill_detail=skill_detail, others=others, objective = objective, facebook = facebook, linkedin = linkedin, twitter = twitter, filename=filename)
+        email = email, Phone = Phone, gpa=gpa, job=job, exps=exps, school = school, grade=grade, higher_edu = higher_edu, higher_edu_detail = higher_edu_detail, skill_f = skill_f, skill_detail=skill_detail, others=others, objective = objective, facebook = facebook, linkedin = linkedin, twitter = twitter,file=file, filename=filename)
 
     else:
         return render_template('create.html')
