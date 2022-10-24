@@ -131,7 +131,7 @@
               </div>
 <br>
 {% endif %}
-              
+              {% if school or higher_edu %}
               <div class="yui-gf">
                 <div class="yui-u first">
                   <h2>Education</h2>
@@ -149,6 +149,7 @@
                   </h4>
                 </div>
               </div>
+                {% endif %}
                 {% endif %}
                 
               {% if facebook or linkedin or twitter %}
